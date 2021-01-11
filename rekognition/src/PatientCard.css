@@ -84,6 +84,8 @@ svg.icon {
 
 .patient-image {
   text-align: left;
+  max-width: 275px;
+  background: no-repeat centre cover;
 }
 
 .button-group {

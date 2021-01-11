@@ -1,19 +1,33 @@
 import React, { Component, Fragment } from 'react';
-import boris from './media/images/boris.png';
 import {Calendar, Doctor, Location} from './Icons';
-// import Calendar from './Icons/Calendar.svg';
 import './PatientCard.css';
 
 
 export default class PatientCard extends Component {
-  render() {
-    return(
-      <Fragment>
-        <div className="patient-card">
+  constructor(props) {
+    super(props);
+    this.state = {name: '', img: ''};
+  }
+
+  componentDidMount() {
+    const socket = new WebSocket("wss://olf304f410.execute-api.us-west-2.amazonaws.com/Prod");
+    socket.onmessage = item => {
+      console.log('New Socket Message', item.data)
+      var dt = JSON.parse(item.data);
+      console.log(dt);
+      this.setState({name: dt.name});
+      this.setState({img: dt.imageUrl});
+    };
+  }
+
+  renderDetails(){
+    if(this.state.name) {
+      return(
+        <Fragment>
           <div className="appointment">
             <div className="grid-left">
-            <img src={boris} className="patient-image" alt="logo" />
-            <div className="patient-name">Boris Reale</div>
+            <img src={this.state.img} className="patient-image" alt="logo" />
+            <div className="patient-name">{this.state.name}</div>
             <div className="patient-detail">MRN: 12345678</div>
             <div className="patient-detail">DOB: 05/01/1991</div>
 
@@ -29,6 +43,21 @@ export default class PatientCard extends Component {
             <button className="green-btn">Queue patient</button>
             <button>Wrong patient</button>
           </div>
+        </Fragment>
+      );
+    }
+    else {
+      return(<h3>No patient to display</h3>);
+    }
+  }
+
+
+  render() {
+    console.log(this.state);
+    return(
+      <Fragment>
+        <div className="patient-card">
+          {this.renderDetails()}
         </div>
       </Fragment>
     );

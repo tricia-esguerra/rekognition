@@ -1,0 +1,20 @@
+
+.dashboard {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .right {
+    padding-left: 75px;
+    text-align: center;
+  }
+
+  .left {
+    text-align: center;
+  }
+
+  .title-head {
+    color: #716E6A;
+    font-weight: bold;
+    font-size: 48px;
+  }
