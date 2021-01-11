@@ -1,0 +1,110 @@
+.patient-card {
+  position: flex;
+  width: 800px;
+  height: 600px;
+
+  background: #F5F5F4;
+  /* darkGreyHeader */
+
+  box-shadow: 0px 4px 8px rgba(113, 110, 106, 0.25);
+  border-radius: 4px;
+  margin-top: 16px;
+}
+
+
+.appointment {
+  display: flex;
+  flex-direction: row;
+  padding: 72px;
+  color: #2e2e2e;
+  margin-left: 11px;
+  width: 90%;
+  /* border-bottom: 1px solid #CFCDC9; */
+  min-height: 350px;
+
+}
+
+.grid-left {
+  min-width: 300px;
+  min-height: 200px;
+  width: 10%;
+  border-right: 1px solid #CFCDC9;
+
+}
+
+.grid-right {
+  padding-left: 45px;
+  max-width: 85%;
+  width: 100%;
+}
+
+.appointment-detail {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+}
+
+.dayOfMonth {
+  font-weight: bold;
+  font-size: get-rem-size(53px);
+  line-height: get-line-height(53, 64);
+  padding: 8px 0;
+}
+
+.time {
+  font-size: get-rem-size(16px);
+  line-height: get-line-height(16, 24);
+}
+
+.appointment-title {
+  color: #00a963;
+  font-size: 23px;
+  margin-top: 0px;
+  text-align: left;
+}
+
+svg.icon {
+  margin-top: 4px;
+  margin-right: 8px;
+}
+
+.patient-name {
+  margin-top: 16px;
+  font-size: 32px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.patient-detail {
+  color: #716E6A;
+  font-size: 16px;
+  text-align: left;
+}
+
+.patient-image {
+  text-align: left;
+}
+
+.button-group {
+  align-items: center;
+  display: flex;
+  padding-left: 220px;
+}
+
+button {
+  margin: 4px;
+  width: 160px;
+  height: 40px;
+  border-radius: 4px;
+  border: 2px solid #008850;
+  cursor: pointer;
+  background: #ffffff;
+}
+
+.green-btn {
+  color: #ffffff;
+  background: #008850;
+  font-weight: bold;
+  font-size: 14px;
+}
